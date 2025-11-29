@@ -82,7 +82,7 @@ def atualizar_relatorio(relatorio, novo_motor, ha_motores):
         
         if relatorio['min_custo_mensal']['custo_mensal'] > novo_motor['custo_mensal']:
             relatorio['min_custo_mensal'] = novo_motor
-        elif relatorio['max_custo_mensal']['custo_mensal'] > novo_motor['custo_mensal']:
+        elif relatorio['max_custo_mensal']['custo_mensal'] < novo_motor['custo_mensal']:
             relatorio['max_custo_mensal'] = novo_motor
     else:                           # Se não houver nenhum motor cadastrado, coloca o motor como o max/min das duas categorias
         relatorio['min_kwu'] = novo_motor
@@ -159,3 +159,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
